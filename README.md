@@ -11,6 +11,7 @@ Aplikacija je organizovana u sledeće module:
 - **Domain** - Domain entiteti i enums (ShipmentStatus)
 - **Persistence** - EF Core DbContext i repositories
 - **BlobStorage** - Azure Blob Storage wrapper (podržava Azurite emulator)
+- **Azure.Messaging.ServiceBus** - Primer koriscenja na production/staging
 - **ServiceBus** - Lokalni in-memory message queue za asinhronu obradu
   - `LocalServiceBusPublisher` - šalje poruke u Channel
   - `LocalDocumentProcessorHostedService` - Background worker koji procesira poruke
@@ -80,5 +81,5 @@ Svi konekcioni stringovi se podešavaju u **`App/appsettings.json`** fajlu.
 
 ## Arhitektura Sistema
 
-<img width="1005" height="895" alt="ARH" src="https://github.com/user-attachments/assets/2dc1f225-f55b-4ffd-a47c-92703dc808d5" />
+<img width="1005" height="895" alt="ARH" src="https://github.com/djordjejovanovic/TransferaShipments_final/blob/main/Arhitecture_diagram.png" />
 
