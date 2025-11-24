@@ -1,8 +1,8 @@
-# TransferaShipments
+TransferaShipments
 
 Aplikacija za upravljanje pošiljkama sa asinhronim upload-om dokumenata. Sistem koristi Clean Architecture sa ASP.NET Core Web API, in-memory message queue za background processing, i Azurite emulator za lokalni development.
 
-## Pregled Arhitekture
+Pregled Arhitekture
 
 Aplikacija je organizovana u sledeće module:
 
@@ -25,18 +25,16 @@ Aplikacija je organizovana u sledeće module:
 - Azure.Storage.Blobs
 - Azurite (Azure Storage Emulator)
 
----
+Kako Pokrenuti API
 
-## Kako Pokrenuti API
-
-### Preduslovi
+Preduslovi
 - .NET 8.0
 - Node.js (za Azurite emulator)
 - SQL Server (TransferaShipments.bak backup baze)
 
-### Koraci za pokretanje
+Koraci za pokretanje
 
-#### 1. Azurite Emulator (Blob Storage)
+1. Azurite Emulator (Blob Storage)
 
 Azurite emulator omogućava lokalno testiranje Azure Blob Storage-a bez Azure naloga.
 
@@ -44,17 +42,17 @@ Azurite emulator omogućava lokalno testiranje Azure Blob Storage-a bez Azure na
 ```bash
 azurite --location ./azurite_workspace --silent --blobPort 10010 --queuePort 10011 --tablePort 10012
 ```
-#### 2. Pokrenite App API projekat
+2. Pokrenite App API projekat
 
-#### 3. Worker/Background Servis
+3. Worker/Background Servis
 
 `LocalDocumentProcessorHostedService` je `BackgroundService` koji se registruje kao `HostedService` u ASP.NET Core aplikaciji i automatski se startuje prilikom pokretanja aplikacije.
 
-## Konekcioni stringovi
+Konekcioni stringovi
 
 Svi konekcioni stringovi se podešavaju u **`App/appsettings.json`** fajlu.
 
-### Sadržaj appsettings.json
+Sadržaj appsettings.json
 
 ```json
 {
@@ -75,11 +73,11 @@ Svi konekcioni stringovi se podešavaju u **`App/appsettings.json`** fajlu.
 }
 ```
 
-## Primeri Request-ova
+Primeri Request-ova
 
 `requests.http` fajl
 
-## Arhitektura Sistema
+Arhitektura Sistema
 
 <img width="1005" height="895" alt="ARH" src="https://github.com/djordjejovanovic/TransferaShipments_final/blob/main/Arhitecture_diagram.png" />
 
